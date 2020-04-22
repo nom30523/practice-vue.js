@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>practice Vue.js</title>
-  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/sanitize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="app">
     <p>{{ message }}</p>
-    <button v-on:click="reverseMessage">メッセージ反転</button>
+    <p>現在{{ number }}回クリックされています</p>
+    <p>{{ ok? 'YES' : 'NO' }}</p>
+    <p>{{ sayHi() }}</p>
+    <p v-text="message"></p>
+    <div v-html="html"></div>
+    <a :href="url">Google</a>
+    <a v-on:click.prevent href="https://www.google.com/?hl=ja">Google</a>
+    <p v-on:mousemove="changeMousePosition">マウスを乗せてください<span v-on:mousemove.stop>反応しないでください</span></p>
+    <p>X:{{ x }}, Y:{{ y }}</p>
+    <input type="text" v-on:keyup.space="myAlert">
+    <button @click="reverseMessage">メッセージ反転</button>
+    <button @[event]="countUp">カウントアップ</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
   <script src="js/main.js"></script>
