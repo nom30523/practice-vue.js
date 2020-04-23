@@ -8,7 +8,36 @@ new Vue({
     url: 'https://www.google.com/?hl=ja',
     x: 0,
     y: 0,
-    event: 'click'
+    event: 'click',
+    isActive: true,
+    color: 'red',
+    bg: 'bg-blue',
+    styleObject: {
+      color: 'red',
+      'background-color': 'blue'
+    },
+    baseObject: {
+      fontSize: '60px'
+    }
+  },
+  computed: {
+    lessThanThree: function() {
+      return this.number > 3 ? '3より上' : '3以下';
+    },
+    classObject: function() {
+      return {
+        red: this.isActive,
+        'bg-blue': !this.isActive
+      }
+    }
+  },
+  watch: {
+    number: function() {
+      const vm = this;
+      setTimeout(function() {
+        vm.number = 0
+      }, 3000)
+    }
   },
   methods: {
     reverseMessage: function() {

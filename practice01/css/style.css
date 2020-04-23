@@ -1,3 +1,7 @@
-p {
-  /* color: red; */
+.red {
+  color: red;
+}
+
+.bg-blue {
+  background: blue;
 }

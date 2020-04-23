@@ -9,8 +9,12 @@
 </head>
 <body>
   <div id="app">
-    <p>{{ message }}</p>
+    <p :class="[{red: isActive}, bg]">{{ message }}</p>
+    <p :style="[styleObject, baseObject]">{{ message }}</p>
+    <button @click="isActive = !isActive">切り替え</button>
+    <input type="text" v-model="message">
     <p>現在{{ number }}回クリックされています</p>
+      <p>{{ lessThanThree }}</p>
     <p>{{ ok? 'YES' : 'NO' }}</p>
     <p>{{ sayHi() }}</p>
     <p v-text="message"></p>
