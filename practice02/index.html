@@ -10,6 +10,12 @@
     <p v-if="ok">ok</p>
     <p v-else-if="maybeOk">maybe ok</p>
     <p v-else>not ok</p>
+    <template v-if="ok">
+      <p>Hello</p>
+      <p>Good bye</p>
+      <p>おはよう</p>
+    </template>
+    <button @click="ok = !ok">ボタン</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
   <script src="js/main.js"></script>
