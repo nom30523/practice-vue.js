@@ -17,6 +17,25 @@
     </template>
     <p v-show="ok">show</p>
     <button @click="ok = !ok">ボタン</button>
+    <template v-for="(fruit, index) in fruits">
+      <ul>
+        <li>{{ index }}{{ fruit }}</li>
+        <hr>
+      </ul>
+    </template>
+    <ul>
+      <div v-for="fruit in fruits" :key="fruit">
+        <li>{{ fruit }}</li>
+        <input type="text">
+      </div>
+    </ul>
+    <button @click="remove">先頭を削除</button>
+    <ul>
+      <li v-for="(value, key, index) in object">{{ index }}{{ value }}</li>
+    </ul>
+    <ul>
+      <li v-for="n of 10">{{ n }}</li>
+    </ul>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
   <script src="js/main.js"></script>
