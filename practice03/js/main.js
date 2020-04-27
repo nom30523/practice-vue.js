@@ -39,5 +39,13 @@ var vm = new Vue({
     }
   }
 });
-
 vm.$mount('#app');
+
+new Vue({
+  // el: '#app2',
+  data: {
+    name: 'のむら'
+  },
+  template: '<h1>こんにちは{{ name }}さん</h1>'
+}).$mount('#app2');
+
