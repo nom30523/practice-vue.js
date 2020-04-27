@@ -20,32 +20,38 @@
 // });
 
 
-var data = {
-  message: 'こんにちは',
-  name: 'のむら'
-}
+// var data = {
+//   message: 'こんにちは',
+//   name: 'のむら'
+// }
 
-var vm = new Vue({
-  // el: '#app',
-  data: data,
-  computed: {
-    myData: function() {
-      return this.$data
-    }
-  },
-  methods: {
-    changeMessage: function() {
-      this.message = '変えました'
-    }
-  }
-});
-vm.$mount('#app');
+// var vm = new Vue({
+//   data: data,
+//   computed: {
+//     myData: function() {
+//       return this.$data
+//     }
+//   },
+//   methods: {
+//     changeMessage: function() {
+//       this.message = '変えました'
+//     }
+//   }
+// });
+// vm.$mount('#app');
+
+// new Vue({
+//   data: {
+//     name: 'のむら'
+//   },
+//   template: '<h1>こんにちは{{ name }}さん</h1>'
+// }).$mount('#app2');
 
 new Vue({
-  // el: '#app2',
   data: {
-    name: 'のむら'
+    name: 'のむら'  
   },
-  template: '<h1>こんにちは{{ name }}さん</h1>'
-}).$mount('#app2');
-
+  render: function(createElement) {
+    return createElement('h1', 'こんにちは' + this.name);
+  }
+}).$mount('#app3');
