@@ -47,11 +47,59 @@
 //   template: '<h1>こんにちは{{ name }}さん</h1>'
 // }).$mount('#app2');
 
+// new Vue({
+//   data: {
+//     name: 'のむら'  
+//   },
+//   render: function(createElement) {
+//     return createElement('h1', 'こんにちは' + this.name);
+//   }
+// }).$mount('#app3');
+
+// new Vue({
+//   data: {
+//     name: 'のむら'  
+//   },
+//   beforeCreate: function() {
+//     console.log('beforeCreate');
+//   },
+//   created: function() {
+//     console.log('created');
+//   },
+//   beforeMount: function() {
+//     console.log('beforeMount');
+//   },
+//   mounted: function() {
+//     console.log('mounted');
+//   },
+//   beforeUpdate: function() {
+//     console.log('beforeUpdate');
+//   },
+//   updated: function() {
+//     console.log('updated');
+//   },
+//   beforeDestroy: function() {
+//     console.log('beforeDestroy');
+//   },
+//   destroyed: function() {
+//     console.log('destroyed');
+//   },
+//   methods: {
+//     destroy: function() {
+//       this.$destroy();
+//     }
+//   }
+// }).$mount('#app4');
+
+Vue.component('hello', {
+  template: '<p>こんにちは</p>'
+});
+
 new Vue({
-  data: {
-    name: 'のむら'  
-  },
-  render: function(createElement) {
-    return createElement('h1', 'こんにちは' + this.name);
-  }
-}).$mount('#app3');
+  el: '#app5'
+});
+
+new Vue({
+  el: '#app6'
+});
+
